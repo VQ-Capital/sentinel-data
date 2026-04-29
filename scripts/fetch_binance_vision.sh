@@ -17,9 +17,9 @@ curl -s -L -o $ZIP $URL
 echo "📦 Arşiv açılıyor..."
 unzip -q -o $ZIP -d datasets/
 
-echo "⚙️ Veri işleniyor: 100.000 satır ayıklanıyor..."
+echo "⚙️ Veri işleniyor: 1.000.000 satır ayıklanıyor..."
 # Değişken karmaşasını önlemek için rakamı doğrudan yazıyoruz
 echo "agg_trade_id,price,qty,first_trade_id,last_trade_id,time,is_buyer_maker,is_best_match" > $S_OUT
-head -n 100000 "datasets/$CSV_IN" >> $S_OUT
+head -n 1000000 "datasets/$CSV_IN" >> $S_OUT # <-- 1M yaptık
 
 echo "✅ BAŞARILI: $S_OUT hazır. Satır sayısı: $(wc -l < $S_OUT)"
