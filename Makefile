@@ -47,28 +47,28 @@ run: build
 # ========= SHORTCUTS =========
 
 single:
-	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --output BTCUSDT_1d"
-	@$(MAKE) run ARGS="--symbols ETHUSDT --days 1 --output ETHUSDT_1d"
-	@$(MAKE) run ARGS="--symbols SOLUSDT --days 1 --output SOLUSDT_1d"
+	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --output BTCUSDT_1D"
+	@$(MAKE) run ARGS="--symbols ETHUSDT --days 1 --output ETHUSDT_1D"
+	@$(MAKE) run ARGS="--symbols SOLUSDT --days 1 --output SOLUSDT_1D"
 
 week:
-	@$(MAKE) run ARGS="--symbols BTCUSDT --days 7 --output BTCUSDT_7d"
-	@$(MAKE) run ARGS="--symbols ETHUSDT --days 7 --output ETHUSDT_7d"
-	@$(MAKE) run ARGS="--symbols SOLUSDT --days 7 --output SOLUSDT_7d"
+	@$(MAKE) run ARGS="--symbols BTCUSDT --days 7 --output BTCUSDT_7D"
+	@$(MAKE) run ARGS="--symbols ETHUSDT --days 7 --output ETHUSDT_7D"
+	@$(MAKE) run ARGS="--symbols SOLUSDT --days 7 --output SOLUSDT_7D"
 
 multi:
-	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 1 --output multi_1d"
+	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 1 --output MULTI_1D"
 
 backtest:
-	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 7 --output multi_7d"
+	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 7 --output MULTI_7D"
 
 quick:
-	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --limit 10000 --output btcusdt_quick_1d"
-	@$(MAKE) run ARGS="--symbols ETHUSDT --days 1 --limit 10000 --output ethusdt_quick_1d"
-	@$(MAKE) run ARGS="--symbols SOLUSDT --days 1 --limit 10000 --output solusdt_quick_1d"
+	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --limit 10000 --output BTCUSDT_QUICK_1D"
+	@$(MAKE) run ARGS="--symbols ETHUSDT --days 1 --limit 10000 --output ETHUSDT_QUICK_1D"
+	@$(MAKE) run ARGS="--symbols SOLUSDT --days 1 --limit 10000 --output SOLUSDT_QUICK_1D"
 
 month:
-	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 30 --output multi_30d"
+	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 30 --output MULTI_30D"
 
 # ========= CLEAN =========
 clean:
