@@ -1,0 +1,16 @@
+[binance]
+base_url = "https://data.binance.vision/data/spot/daily/aggTrades"
+
+[dataset]
+output_file = "datasets/training_master.csv"
+row_limit_per_symbol = 500000
+strict_timestamp_order = false
+skip_corrupt_rows = true
+
+[assets]
+symbols = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+
+# 📌 2-3 gün öncesini dene (bugün 30 Nisan)
+[[range]]
+start = "2026-04-26"
+end = "2026-04-27"
