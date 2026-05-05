@@ -57,9 +57,9 @@ week:
 	@$(MAKE) run ARGS="--symbols SOLUSDT --days 7 --output SOLUSDT_7D"
 
 month:
-	@$(MAKE) run ARGS="--symbols BTCUSDT --days 30 --output BTCUSDT_30"
-	@$(MAKE) run ARGS="--symbols ETHUSDT --days 30 --output ETHUSDT_30"
-	@$(MAKE) run ARGS="--symbols SOLUSDT --days 30 --output SOLUSDT_30
+	@$(MAKE) run ARGS="--symbols BTCUSDT --days 30 --output BTCUSDT_30D"
+	@$(MAKE) run ARGS="--symbols ETHUSDT --days 30 --output ETHUSDT_30D"
+	@$(MAKE) run ARGS="--symbols SOLUSDT --days 30 --output SOLUSDT_30D"
 
 quick:
 	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --limit 10000 --output BTCUSDT_QUICK_1D"
