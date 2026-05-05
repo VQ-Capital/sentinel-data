@@ -56,19 +56,16 @@ week:
 	@$(MAKE) run ARGS="--symbols ETHUSDT --days 7 --output ETHUSDT_7D"
 	@$(MAKE) run ARGS="--symbols SOLUSDT --days 7 --output SOLUSDT_7D"
 
-multi:
-	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 1 --output MULTI_1D"
-
-backtest:
-	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 7 --output MULTI_7D"
+month:
+	@$(MAKE) run ARGS="--symbols BTCUSDT --days 30 --output BTCUSDT_30"
+	@$(MAKE) run ARGS="--symbols ETHUSDT --days 30 --output ETHUSDT_30"
+	@$(MAKE) run ARGS="--symbols SOLUSDT --days 30 --output SOLUSDT_30
 
 quick:
 	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --limit 10000 --output BTCUSDT_QUICK_1D"
 	@$(MAKE) run ARGS="--symbols ETHUSDT --days 1 --limit 10000 --output ETHUSDT_QUICK_1D"
 	@$(MAKE) run ARGS="--symbols SOLUSDT --days 1 --limit 10000 --output SOLUSDT_QUICK_1D"
 
-month:
-	@$(MAKE) run ARGS="--symbols BTCUSDT,ETHUSDT,SOLUSDT --days 30 --output MULTI_30D"
 
 # ========= CLEAN =========
 clean:
@@ -86,10 +83,8 @@ help:
 	@echo "  make build"
 	@echo "  make install"
 	@echo ""
-	@echo "  make single      (BTC, 1 gün)"
-	@echo "  make week        (BTC, 7 gün)"
-	@echo "  make multi       (BTC,ETH,SOL)"
-	@echo "  make backtest    (7 gün multi)"
+	@echo "  make single      (1 gün)"
+	@echo "  make week        (7 gün)"
 	@echo "  make month       (30 gün)"
 	@echo "  make quick       (limitli test)"
 	@echo ""
