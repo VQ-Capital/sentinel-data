@@ -46,6 +46,11 @@ run: build
 
 # ========= SHORTCUTS =========
 
+quick:
+	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --limit 10000 --output BTCUSDT_QUICK_1D"
+	@$(MAKE) run ARGS="--symbols ETHUSDT --days 1 --limit 10000 --output ETHUSDT_QUICK_1D"
+	@$(MAKE) run ARGS="--symbols SOLUSDT --days 1 --limit 10000 --output SOLUSDT_QUICK_1D"
+
 single:
 	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --output BTCUSDT_1D"
 	@$(MAKE) run ARGS="--symbols ETHUSDT --days 1 --output ETHUSDT_1D"
@@ -60,12 +65,6 @@ month:
 	@$(MAKE) run ARGS="--symbols BTCUSDT --days 30 --output BTCUSDT_30D"
 	@$(MAKE) run ARGS="--symbols ETHUSDT --days 30 --output ETHUSDT_30D"
 	@$(MAKE) run ARGS="--symbols SOLUSDT --days 30 --output SOLUSDT_30D"
-
-quick:
-	@$(MAKE) run ARGS="--symbols BTCUSDT --days 1 --limit 10000 --output BTCUSDT_QUICK_1D"
-	@$(MAKE) run ARGS="--symbols ETHUSDT --days 1 --limit 10000 --output ETHUSDT_QUICK_1D"
-	@$(MAKE) run ARGS="--symbols SOLUSDT --days 1 --limit 10000 --output SOLUSDT_QUICK_1D"
-
 
 # ========= CLEAN =========
 clean:
