@@ -66,6 +66,15 @@ month:
 	@$(MAKE) run ARGS="--symbols ETHUSDT --days 30 --output ETHUSDT_30D"
 	@$(MAKE) run ARGS="--symbols SOLUSDT --days 30 --output SOLUSDT_30D"
 
+MONTH ?= 01
+YEAR ?= 2026
+SYMBOL ?= BTCUSDT
+
+run-month:
+	@START=$(YEAR)-$(MONTH)-01; \
+	END=$$(date -d "$$START +1 month -1 day" +%Y-%m-%d); \
+	$(MAKE) run ARGS="--symbols $(SYMBOL) --start $$START --end $$END --output $(SYMBOL)_$(MONTH)_$(YEAR)"
+
 # ========= CLEAN =========
 clean:
 	@echo "${YELLOW}🧹 Temizleniyor...${RESET}"
@@ -86,6 +95,18 @@ help:
 	@echo "  make week        (7 gün)"
 	@echo "  make month       (30 gün)"
 	@echo "  make quick       (limitli test)"
+	@echo ""
+	@echo "	 make run-month MONTH=01 YEAR=2026 SYMBOL=BTCUSDT"
+	@echo "	 make run-month MONTH=02 YEAR=2026 SYMBOL=BTCUSDT"
+	@echo "	 make run-month MONTH=03 YEAR=2026 SYMBOL=BTCUSDT"
+	@echo "	 make run-month MONTH=04 YEAR=2026 SYMBOL=BTCUSDT"
+	@echo "	 make run-month MONTH=05 YEAR=2026 SYMBOL=BTCUSDT"
+	@echo ""
+	@echo "	 make --symbols BTCUSDT --start 2026-01-01 --end 2026-01-31 --output BTCUSDT_01_2026"
+	@echo "	 make --symbols BTCUSDT --start 2026-02-01 --end 2026-03-28 --output BTCUSDT_02_2026"
+	@echo "	 make --symbols BTCUSDT --start 2026-03-01 --end 2026-03-31 --output BTCUSDT_03_2026"
+	@echo "	 make --symbols BTCUSDT --start 2026-04-01 --end 2026-04-30 --output BTCUSDT_04_2026"
+	@echo "	 make --symbols BTCUSDT --start 2026-05-01 --end 2026-05-31 --output BTCUSDT_05_2026"			
 	@echo ""
 	@echo "${GREEN}Custom:${RESET}"
 	@echo "  make run ARGS=\"--symbols BTCUSDT --days 3\""
